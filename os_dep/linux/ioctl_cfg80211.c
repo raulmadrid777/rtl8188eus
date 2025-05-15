@@ -8917,7 +8917,7 @@ static void rtw_cfg80211_init_vht_capab(_adapter *padapter
 	_rtw_memcpy(&sta_vht_cap->vht_mcs, vht_cap_ie + 2 + 4, 8);
 }
 #endif /* defined(CONFIG_80211AC_VHT) && (LINUX_VERSION_CODE >= KERNEL_VERSION(3, 6, 0)) */
-
+/*
 static void rtw_cfg80211_create_vht_cap(struct ieee80211_sta_vht_cap *vht_cap)
 {
 	u16 mcs_map;
@@ -8934,7 +8934,7 @@ static void rtw_cfg80211_create_vht_cap(struct ieee80211_sta_vht_cap *vht_cap)
 	vht_cap->vht_mcs.rx_mcs_map = cpu_to_le16(mcs_map);
 	vht_cap->vht_mcs.tx_mcs_map = cpu_to_le16(mcs_map);
 }
-
+*/
 void rtw_cfg80211_init_wdev_data(_adapter *padapter)
 {
 #ifdef CONFIG_CONCURRENT_MODE
@@ -8961,7 +8961,7 @@ void rtw_cfg80211_init_wiphy(_adapter *padapter)
 		if (band) {
 			#if defined(CONFIG_80211N_HT)
 			rtw_cfg80211_init_ht_capab(padapter, &band->ht_cap, BAND_ON_2_4G, rf_type);
-			rtw_cfg80211_create_vht_cap(&band->vht_cap);
+			//rtw_cfg80211_create_vht_cap(&band->vht_cap);
 			#endif
 		}
 	}
